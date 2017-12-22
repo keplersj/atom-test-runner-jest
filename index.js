@@ -7,20 +7,21 @@ export default ({
   buildDefaultApplicationDelegate,
   logFile,
   testPaths
-}) =>
-  runCLI(
+}) => {
+  global.atom = buildAtomEnvironment({
+    applicationDelegate: buildDefaultApplicationDelegate(),
+    window,
+    document: window.document,
+    configDirPath: process.env.ATOM_HOME,
+    enablePersistence: false
+  });
+
+  return runCLI(
     {
-      globals: {
-        atom: buildAtomEnvironment({
-          applicationDelegate: buildDefaultApplicationDelegate(),
-          window,
-          document: window.document,
-          configDirPath: process.env.ATOM_HOME,
-          enablePersistence: false
-        })
-      },
       _: testPaths,
+      testEnvironment: `${__dirname}/environment`,
       outputFile: logFile
     },
     [process.cwd()]
   ).then(resp => (resp.results.success ? 0 : 1));
+};
