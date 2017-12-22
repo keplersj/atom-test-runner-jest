@@ -1,0 +1,26 @@
+{
+  "name": "atom-test-runner-jest",
+  "version": "0.0.1",
+  "description": "Atom Test Runner for Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keplersj/atom-test-runner-jest.git"
+  },
+  "keywords": [
+    "atom",
+    "jest"
+  ],
+  "author": "Kepler Sticka-Jones <kepler@stickajones.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keplersj/atom-test-runner-jest/issues"
+  },
+  "homepage": "https://github.com/keplersj/atom-test-runner-jest#readme",
+  "dependencies": {
+    "jest-cli": "^22.0.3"
+  }
+}
