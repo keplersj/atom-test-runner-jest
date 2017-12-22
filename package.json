@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/keplersj/atom-test-runner-jest#readme",
   "dependencies": {
-    "jest-cli": "^22.0.3"
+    "jest-cli": "^22.0.3",
+    "jest-environment-jsdom": "^22.0.3"
   }
 }
