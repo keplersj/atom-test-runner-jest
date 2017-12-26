@@ -19,7 +19,6 @@ export default ({
   return runCLI(
     {
       _: testPaths,
-      testEnvironment: `${__dirname}/environment`,
       outputFile: logFile
     },
     [process.cwd()]
