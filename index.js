@@ -18,6 +18,7 @@ export default ({
 
   return runCLI(
     {
+      cache: false,
       _: testPaths,
       outputFile: logFile
     },
