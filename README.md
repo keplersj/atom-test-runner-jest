@@ -5,7 +5,7 @@ Use [Jest](https://facebook.github.io/jest/) to bring Delightful JavaScript Test
 ## Installation
 
 ```
-npm install atom-test-runner-jest --save-dev
+npm install atom-test-runner-jest jest-preset-atom --save-dev
 ```
 
 ## Usage
@@ -15,9 +15,10 @@ Add the following line to your `package.json`:
 ```json
 {
   "name": "my-package",
-  // ...
-+  "atomTestRunner": "atom-test-runner-jest",
-  // ...
+  "atomTestRunner": "atom-test-runner-jest",
+  "jest": {
+    "preset": ["jest-preset-atom"]
+  }
 }
 ```
 
