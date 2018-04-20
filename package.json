@@ -1,6 +1,6 @@
 {
   "name": "atom-test-runner-jest",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Atom Test Runner for Jest",
   "main": "index.js",
   "scripts": {
