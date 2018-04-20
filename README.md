@@ -10,14 +10,14 @@ npm install atom-test-runner-jest jest-preset-atom --save-dev
 
 ## Usage
 
-Add the following line to your `package.json`:
+Add the following to your `package.json`:
 
 ```json
 {
   "name": "my-package",
   "atomTestRunner": "atom-test-runner-jest",
   "jest": {
-    "preset": ["jest-preset-atom"]
+    "preset": "jest-preset-atom"
   }
 }
 ```
