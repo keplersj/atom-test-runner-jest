@@ -34,7 +34,6 @@ export default ({
   return runCLI(
     {
       cache: true,
-      _: testPaths,
       outputFile: logFile,
       runInBand: true
     },
