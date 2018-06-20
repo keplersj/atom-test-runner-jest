@@ -1,4 +1,20 @@
 language: node_js
+
 node_js:
   - node
   - lts/*
+  
+os:
+  - osx
+  - linux
+
+env:
+  matrix:
+    - ATOM_CHANNEL=stable
+    - ATOM_CHANNEL=beta
+  
+before_script:
+  - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+  - chmod u+x build-package.sh
+  - "./build-package.sh"
+  - echo "Disregard the message about adding specs."
