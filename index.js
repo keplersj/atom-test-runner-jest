@@ -3,8 +3,7 @@
 import { runCLI } from "jest-cli";
 import * as tmp from "tmp";
 import * as pkgUp from "pkg-up";
-import util from "util";
-import { remote } from "electron";
+import { Console } from "console";
 
 export default ({
   buildAtomEnvironment,
@@ -14,20 +13,9 @@ export default ({
   headless
 }) => {
   if (headless) {
-    console.debug = console.log = function(...args) {
-      const formatted = util.format(...args);
-      process.stdout.write(`${formatted}\n`);
-    };
+    const newConsole = new Console(process.stdout, process.stderr);
 
-    console.error = function(...args) {
-      const formatted = util.format(...args);
-      process.stderr.write(`${formatted}\n`);
-    };
-
-    Object.defineProperties(process, {
-      stdout: { value: remote.process.stdout },
-      stderr: { value: remote.process.stderr }
-    });
+    global.console = newConsole;
   }
 
   const cwd = pkgUp.sync(testPaths[0]);
