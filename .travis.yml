@@ -41,6 +41,6 @@ before_install:
         ln -s "./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "${ATOM_SCRIPT_PATH}"
       fi
       
-      export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app
-      export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/apm/node_modules/.bin
+      export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app
+      export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi
