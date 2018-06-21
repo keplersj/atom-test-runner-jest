@@ -15,6 +15,7 @@ describe("Basic Unit Tests", () => {
         expect(process.stderr.length).not.toBe(0); // Test results are outputted to stderr.
       } catch (e) {
         console.debug(e);
+        fail(e);
       }
     });
   });
@@ -28,6 +29,7 @@ describe("Basic Unit Tests", () => {
         expect(process.stderr.length).not.toBe(0); // Test results are outputted to stderr.
       } catch (e) {
         console.debug(e);
+        fail(e);
       }
     });
   });
