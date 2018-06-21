@@ -31,16 +31,13 @@ before_install:
       export PATH=${PATH}:${HOME}/atom/usr/bin
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
-        export ATOM_APP_NAME="Atom.app"
-        export ATOM_SCRIPT_NAME="atom.sh"
-        export ATOM_SCRIPT_PATH="./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh"
+        export ATOM_APP_NAME="Atom.app""
       else
         export ATOM_APP_NAME="Atom ${ATOM_CHANNEL}.app"
-        export ATOM_SCRIPT_NAME="atom-${ATOM_CHANNEL}"
-        export ATOM_SCRIPT_PATH="./atom-${ATOM_CHANNEL}"
-        ln -s "./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "${ATOM_SCRIPT_PATH}"
       fi
       
-      export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app
+      export ATOM_SCRIPT_PATH="$PWD/atom/atom"
+      ln -s "./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "${ATOM_SCRIPT_PATH}"
+      export PATH=$PATH:$PWD/atom
       export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi
