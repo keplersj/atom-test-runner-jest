@@ -29,6 +29,7 @@ before_install:
       fi
       
       export PATH=${PATH}:${HOME}/atom/usr/bin/
+      ls ${HOME}/atom/usr/bin/
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_APP_NAME="Atom.app"
@@ -42,5 +43,8 @@ before_install:
       fi
       
       export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/
+      ls ./atom/${ATOM_APP_NAME}/Contents/Resources/app/
       export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/apm/node_modules/.bin/
+      ls ./atom/${ATOM_APP_NAME}/Contents/Resources/app/apm/node_modules/.bin/
     fi
+  - echo $PATH
