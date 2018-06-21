@@ -31,7 +31,7 @@ before_install:
       export PATH=${PATH}:${HOME}/atom/usr/bin
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
-        export ATOM_APP_NAME="Atom.app""
+        export ATOM_APP_NAME="Atom.app"
       else
         export ATOM_APP_NAME="Atom ${ATOM_CHANNEL}.app"
       fi
