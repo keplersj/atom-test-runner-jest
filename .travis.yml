@@ -28,8 +28,7 @@ before_install:
         export APM_SCRIPT_NAME="apm-${ATOM_CHANNEL}"
       fi
       
-      alias atom=${HOME}/atom/usr/bin/${ATOM_SCRIPT_NAME}
-      alias apm=${HOME}/atom/usr/bin/${APM_SCRIPT_NAME}
+      export PATH=${PATH}:${HOME}/atom/usr/bin/
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_APP_NAME="Atom.app"
@@ -41,5 +40,7 @@ before_install:
         export ATOM_SCRIPT_PATH="./atom-${ATOM_CHANNEL}"
         ln -s "./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "${ATOM_SCRIPT_PATH}"
       fi
-      export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/:./atom/${ATOM_APP_NAME}/Contents/Resources/app/apm/node_modules/.bin
+      
+      export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/
+      export PATH=${PATH}:./atom/${ATOM_APP_NAME}/Contents/Resources/app/apm/node_modules/.bin/
     fi
