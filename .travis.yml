@@ -17,6 +17,6 @@ before_install:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
   - chmod u+x build-package.sh
   - "./build-package.sh"
-  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then; export PATH=${PATH}:${HOME}/atom/usr/bin/; fi
-  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then; export PATH=${PATH}:./atom/Atom.app/Contents/Resources/app/apm/node_modules/.bin/; fi
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export PATH=${PATH}:${HOME}/atom/usr/bin/; fi
+  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then export PATH=${PATH}:./atom/Atom.app/Contents/Resources/app/apm/node_modules/.bin/; fi
   - echo "Disregard the previous message about adding specs."
