@@ -18,7 +18,7 @@ before_install:
   - chmod u+x build-package.sh
   - "./build-package.sh"
   - echo "Disregard the previous message about adding specs."
-  -  |
+  - |
     if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_SCRIPT_NAME="atom"
@@ -30,7 +30,7 @@ before_install:
       
       alias atom=${HOME}/atom/usr/bin/${ATOM_SCRIPT_NAME}
       alias apm=${HOME}/atom/usr/bin/${APM_SCRIPT_NAME}
-    eif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
+    elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_APP_NAME="Atom.app"
         export ATOM_SCRIPT_NAME="atom.sh"
