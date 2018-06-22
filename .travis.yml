@@ -36,8 +36,8 @@ before_script:
         export ATOM_APP_NAME="Atom ${ATOM_CHANNEL}.app"
       fi
       
-      export ATOM_SCRIPT_PATH="$PWD/atom/atom"
-      ln -s "./atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "${ATOM_SCRIPT_PATH}"
+      ln -s "$PWD/atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "$PWD/atom/atom"
+      ls -l $PWD/atom
       export PATH=$PATH:$PWD/atom
       export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi
