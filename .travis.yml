@@ -2,9 +2,11 @@ language: node_js
 
 node_js:
   - node
+  - lts/*
   
 os:
   - osx
+  - linux
 
 env:
   matrix:
