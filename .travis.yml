@@ -37,7 +37,6 @@ before_script:
       fi
       
       ln -s "$PWD/atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "$PWD/atom/atom"
-      ls -l $PWD/atom
       export PATH=$PATH:$PWD/atom
       export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi

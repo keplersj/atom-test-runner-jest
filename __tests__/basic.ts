@@ -1,13 +1,12 @@
 import execa from "execa";
 import * as path from "path";
+import isCI from "is-ci";
 
-// jest.setTimeout(60000); // Let Promises timeout after 1 minute.
+isCI && jest.setTimeout(60000); // Let Promises timeout after 1 minute on CI.
 
 const cwd = path.join(__dirname, "__fixtures__", "basic");
 
 describe("Basic Unit Tests", () => {
-  console.log(global.process.env.PATH);
-
   describe("when run with `atom --test`", () => {
     it("runs successfully", async () => {
       try {
