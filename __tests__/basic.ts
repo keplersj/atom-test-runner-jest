@@ -6,6 +6,8 @@ import * as path from "path";
 const cwd = path.join(__dirname, "__fixtures__", "basic");
 
 describe("Basic Unit Tests", () => {
+  console.log(global.process.env.PATH);
+
   describe("when run with `atom --test`", () => {
     it("runs successfully", async () => {
       try {
