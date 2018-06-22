@@ -44,3 +44,5 @@ before_script:
       export PATH=$PATH:$PWD/atom
       export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi
+    
+script: npm test -- --maxWorkers=1 --ci
