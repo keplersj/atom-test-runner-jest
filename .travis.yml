@@ -32,6 +32,8 @@ before_script:
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_APP_NAME="Atom.app"
+      elif [ "${ATOM_CHANNEL}" = "beta"]; then
+        export ATOM_APP_NAME="Atom Beta.app"
       else
         export ATOM_APP_NAME="Atom ${ATOM_CHANNEL}.app"
       fi
