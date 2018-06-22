@@ -2,11 +2,9 @@ language: node_js
 
 node_js:
   - node
-  - lts/*
   
 os:
   - osx
-  - linux
 
 env:
   matrix:
@@ -18,6 +16,8 @@ before_install:
   - chmod u+x build-package.sh
   - "./build-package.sh"
   - echo "Disregard the previous message about adding specs."
+
+before_script:
   - |
     if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
