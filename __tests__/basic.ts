@@ -10,7 +10,13 @@ describe("Basic Unit Tests", () => {
   describe("when run with `atom --test`", () => {
     it("runs successfully", async () => {
       try {
-        const process = await execa("atom", ["--test", "."], { cwd });
+        const process = await execa(
+          isCI && global.process.env.ATOM_CHANNEL === "beta"
+            ? "atom-beta"
+            : "atom",
+          ["--test", "."],
+          { cwd }
+        );
 
         expect(process.failed).toBe(false);
         expect(process.stderr.length).not.toBe(0); // Test results are outputted to stderr.

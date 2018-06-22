@@ -32,13 +32,15 @@ before_script:
     elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then 
       if [ "${ATOM_CHANNEL}" = "stable" ] || [ "${ATOM_CHANNEL}" = "dev" ]; then
         export ATOM_APP_NAME="Atom.app"
-      elif [ "${ATOM_CHANNEL}" = "beta"]; then
-        export ATOM_APP_NAME="Atom Beta.app"
+        export ATOM_SCRIPT_NAME="atom"
+        export ATOM_SCRIPT_PATH="$PWD/atom/atom"
       else
         export ATOM_APP_NAME="Atom ${ATOM_CHANNEL}.app"
+        export ATOM_SCRIPT_NAME="atom-${ATOM_CHANNEL}"
+        export ATOM_SCRIPT_PATH="$PWD/atom/atom-${ATOM_CHANNEL}"
       fi
       
-      ln -s "$PWD/atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "$PWD/atom/atom"
+      ln -s "$PWD/atom/${ATOM_APP_NAME}/Contents/Resources/app/atom.sh" "$ATOM_SCRIPT_PATH"
       export PATH=$PATH:$PWD/atom
       export PATH=$PATH:$PWD/atom/$ATOM_APP_NAME/Contents/Resources/app/apm/node_modules/.bin
     fi
