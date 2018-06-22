@@ -12,6 +12,9 @@ export default ({
   testPaths,
   headless
 }) => {
+  process.stdout.write("Hello world!");
+  process.stderr.write("Hello world!");
+
   if (headless) {
     const newConsole = new Console(process.stdout, process.stderr);
 
@@ -20,7 +23,8 @@ export default ({
 
   const cwd = pkgUp.sync(testPaths[0]);
 
-  console.log("Creating Atom environment variable!");
+  process.stdout.write("Creating Atom environment variable!");
+  process.stderr.write("Creating Atom environment variable!");
 
   global.atom = buildAtomEnvironment({
     applicationDelegate: buildDefaultApplicationDelegate(),
@@ -30,7 +34,8 @@ export default ({
     enablePersistence: false
   });
 
-  console.log("Starting Jest!");
+  process.stdout.write("Starting Jest!");
+  process.stderr.write("Starting Jest!");
 
   return runCLI(
     {

@@ -15,8 +15,11 @@ describe("Basic Unit Tests", () => {
             ? "atom-beta"
             : "atom",
           ["--test", "."],
-          { cwd, stdout: process.stdout }
+          { cwd }
         );
+
+        console.debug("stdout", atomProcess.stdout);
+        console.debug("stderr", atomProcess.stderr);
 
         expect(atomProcess.failed).toBe(false);
         expect(atomProcess.stderr.length).not.toBe(0); // Test results are outputted to stderr.
