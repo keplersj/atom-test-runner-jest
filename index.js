@@ -20,6 +20,8 @@ export default ({
 
   const cwd = pkgUp.sync(testPaths[0]);
 
+  console.log("Creating Atom environment variable!");
+
   global.atom = buildAtomEnvironment({
     applicationDelegate: buildDefaultApplicationDelegate(),
     window,
@@ -27,6 +29,8 @@ export default ({
     configDirPath: tmp.dirSync().name,
     enablePersistence: false
   });
+
+  console.log("Starting Jest!");
 
   return runCLI(
     {
